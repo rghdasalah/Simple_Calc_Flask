@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Calculator</title>
+    <link rel="icon" type="image/x-icon" href="/static/icon.png">
+    <style>
+        body {
+          margin-top: 195px;
+          background-image: url('/static/img4.jpg');
+          background-repeat: no-repeat;
+          background-attachment: fixed;
+          background-size: cover;
+        }
+      </style>
+</head>
+<body>
+    <center>
+    <h1 style="color:#B48D33;">Calculator</h1>
+    <form action="/calculate" method="post">
+        <input type="number" name="num1" placeholder="Enter number 1" required>
+        <br><br>
+        <select name="operator" required>
+            <option value="addition">+</option>
+            <option value="subtraction">-</option>
+            <option value="multiplication">*</option>
+            <option value="division">/</option>
+        </select>
+        <br><br>
+        <input type="number" name="num2" placeholder="Enter number 2" required>
+        <br><br><br>
+        <input type="submit" value="Calc">
+    </form>
+    <br>
+    {% if result %}
+        <h2>Result: {{ result }}</h2>
+    {% endif %}
+    </center>
+</body>
+</html>
